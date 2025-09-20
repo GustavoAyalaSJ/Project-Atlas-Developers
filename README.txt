@@ -1,10 +1,10 @@
 ~Atlas Developers~
 
-Projeto criado para Senai Campus da Indústria
+Projeto criado para Senai Campus da Indústria, cancelado devido ao termino do prazo da demanda;
 
-Ainda sendo construído (Sujeito a não termino do site, devido ao prazo da demanda)
+Ainda sendo construído (Com base nas aulas do curso Informática para Internet);
 
-Sugestões para adições no site:
+Sugestões para a continuação e ampliação do site:
 - Bloqueio de voltar a página inicial pela página do usuário;
 - Área de Cadastro para empresas e candidatos;
 - Página de anúncios (onde empresas anunciam vagas ou notícias externas do mercado de desenvolvedores no geral, consequentemente, aparecer na página de perfil);
