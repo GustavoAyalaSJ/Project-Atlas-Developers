@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas Developers - Vagas</title>
+    <link rel="stylesheet" href="Vaga.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+</head>
+
+<body>
+    <div class="background-container vagas-page-bg">
+        <header class="header">
+            <a href="Protótipo da Página Inicial.html" class="logo-link">
+                <div class="logo">
+                    <img src="Logotipo Achadinhos Oferta Divertido Verde e Rosa.png" alt="Atlas Developers Logo">
+                    <span>ATLAS DEVELOPERS</span>
+                </div>
+            </a>
+            <nav class="nav-menu">
+                <button class="nav-button" onclick="location.href='Protótipo de Vagas.html'">VAGAS</button>
+                <div class="search-bar">
+                    <input type="text" placeholder="">
+                    <button class="search-icon">🔍</button>
+                </div>
+            </nav>
+            <div class="user-actions">
+                <button class="icon-button">🔔</button>
+                <button class="icon-button">👤</button>
+            </div>
+        </header>
+
+        <main class="main-content-vagas">
+            <section class="filters-section">
+                <div class="filter-dropdown">
+                    <select id="estado-select">
+                        <option value="">Selecione um Estado</option>
+                    </select>
+                </div>
+
+                <div class="filter-dropdown">
+                    <select id="municipio-select" disabled>
+                        <option value="">Selecione um Município</option>
+                    </select>
+                </div>
+
+                <div class="filter-dropdown">
+                    <select id="nivel-select">
+                        <option value="">Selecione um Nível</option>
+                        <option value="junior">Júnior</option>
+                        <option value="pleno">Pleno</option>
+                        <option value="senior">Sênior</option>
+                    </select>
+                </div>
+            </section>
+
+            <div class="vagas-content-wrapper">
+                <section class="job-listings" id="job-listings-section">
+                    <p class="found-jobs" id="found-jobs-message">Não há empregos disponíveis no momento.</p>
+                </section>
+
+                <aside class="more-info-panel">
+                    <h2>MAIS INFORMAÇÕES</h2>
+                    <p class="company-name">NOME DA EMPRESA</p>
+                    <div class="company-logo-placeholder">LOGO</div>
+
+                    <p><strong>DIRIGENTE DA PROPOSTA</strong></p>
+                    <p>NOME DA VAGA</p>
+                    <p>PERÍODO</p>
+                    <p>TIPO DE SERVIÇO</p>
+                    <p>DETALHES:</p>
+                    <div class="details-box">
+                    </div>
+
+                    <p class="contact-prompt">ENTRE EM CONTATO PARA MAIS DETALHES DA VAGA</p>
+                    <div class="contact-icons">
+                        <button class="contact-icon">📞</button>
+                        <button class="contact-icon">✉️</button>
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,355 @@
+.vagas-page-bg {
+    background-image: url('seu_background_para_vagas.jpg');
+    background-color: #3f51b5;
+}
+
+.background-container {
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.main-content-vagas {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+}
+
+.hidden-select {
+    display: none; 
+}
+
+.filter-button::after {
+    content: ' >'; 
+    margin-left: 5px;
+    transition: transform 0.2s;
+}
+
+.vagas-content-wrapper {
+    display: flex;
+    flex-grow: 1;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#job-listings-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    font-size: 1.2em;
+    color: #555;
+    text-align: center;
+}
+
+.vagas-content-wrapper {
+    display: flex;
+    flex-grow: 1;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.filters-section {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-button {
+    background-color: #E0E0E0;
+    color: #333;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.filter-button:hover {
+    background-color: #d0d0d0;
+}
+
+.job-listings {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 15px;
+    flex: 2;
+    min-width: 300px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.found-jobs {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.job-card {
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto auto;
+    gap: 5px 10px;
+    align-items: center;
+    position: relative;
+}
+
+.job-card h3 {
+    grid-column: 1 / 2;
+    font-size: 1.1em;
+    color: #333;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.job-card p {
+    grid-column: 1 / 2;
+    font-size: 0.9em;
+    color: #666;
+    margin: 0;
+}
+
+.more-info-button {
+    grid-column: 1 / 2;
+    justify-self: start;
+    background-color: #8C64FF;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.85em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.more-info-button:hover {
+    background-color: #7a54e6;
+}
+
+.favorite-button {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    align-self: start;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    padding: 0;
+}
+
+.more-info-panel {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 15px;
+    flex: 1;
+    min-width: 280px;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.more-info-panel h2 {
+    color: #333;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #8C64FF;
+    padding-bottom: 10px;
+    width: 80%;
+}
+
+.more-info-panel p {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    text-align: left;
+    width: 100%;
+}
+
+.more-info-panel strong {
+    color: #333;
+}
+
+.company-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #8C64FF;
+    margin-bottom: 15px;
+}
+
+.company-logo-placeholder {
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+.details-box {
+    background-color: #f5f5f5;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    min-height: -50px;
+    width: 100%;
+    text-align: left;
+    color: #444;
+    font-size: 0.9em;
+}
+
+.contact-prompt {
+    font-size: 0.8em;
+    color: #888;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.contact-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.contact-icon {
+    background-color: #8C64FF;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-icon:hover {
+    background-color: #7a54e6;
+}
+
+@media (max-width: 900px) {
+    .vagas-content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .job-listings,
+    .more-info-panel {
+        flex: none;
+        width: 95%;
+        max-width: 600px; 
+    }
+}
+
+@media (max-width: 600px) {
+    .filters-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .filter-button {
+        width: 100%;
+    }
+}
+
+.logo-link {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.logo-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.logo-link .logo span {
+    color: white;
+}
+
+#estado-select,
+#municipio-select,
+#nivel-select {
+    background-color: #E0E0E0;
+    color: #333;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    padding-right: 35px;
+}
+
+#estado-select:hover,
+#municipio-select:hover,
+#nivel-select:hover {
+    background-color: #d0d0d0;
+}
+
+#municipio-select:disabled {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.filters-section {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-dropdown {
+
+}

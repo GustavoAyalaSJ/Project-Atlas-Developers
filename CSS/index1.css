@@ -1,0 +1,243 @@
+/* Geral */
+body,html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Fundo */
+.background-container {
+    background-image: url('Fundo1.jpg'); /* Verifique se o caminho da imagem está correto */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cabeçalho */
+.cabeçalho {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    height: 50px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logotipo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.logotipo img {
+    height: 80px;
+    width: auto;
+    margin-right: 15px;
+}
+
+.logotipo span {
+    font-size: 1.1em;
+    color: white;
+    margin: 0;
+    padding: 0;
+    margin-right: 10px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    margin-left: 700px;
+    gap: 14px;
+}
+
+.nav-button {
+    background-color: #8C64FF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.search-bar input {
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    width: 150px;
+}
+
+.search-bar input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-icon {
+    background-color: #8C64FF;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.user-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.icon-button {
+    background-color: rgba(140, 100, 255, 0.8);
+    color: white; /* Cor do ícone */
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+/* Conteúdo Principal (Main) */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.role-selection-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px 30px;
+    border-radius: 30px;
+    transform: translateY(-20px);
+    transform: translateX(-5px);
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    margin: 0;
+}
+
+.role-selection-card h2 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+.role-button {
+    display: block;
+    width: 80%;
+    padding: 15px 0;
+    margin: 15px auto;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.role-button.candidato {
+    background-color: #8C64FF;
+}
+
+.role-button.empresa {
+    background-color: #8C64FF;
+}
+
+.role-button:hover {
+    background-color: #6A4DBF;
+}
+
+.role-selection-card p {
+    color: #666;
+    margin: 15px 0;
+    font-size: 1em;
+}
+
+.design-placeholder {
+    color: white;
+    font-size: 0.9em;
+    line-height: 1.5;
+    text-align: justify;
+    padding: 15px;
+    position: absolute;
+    right: 5%;
+    bottom: 13%;
+    width: 450px;
+    height: 270px;
+    background-color: rgba(60, 50, 120, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Rodapé */
+.rodape {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 15px 20px;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+}
+.rodape-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.rodape-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+.rodape-links a:hover {
+    color: #8C64FF;
+}
+
+.separador {
+    color: #8C64FF;
+    font-size: 1.1em;
+}

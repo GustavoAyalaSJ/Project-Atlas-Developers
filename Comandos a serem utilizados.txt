@@ -1,0 +1,9 @@
+            <div class="user-actions">
+                <button class="sino">🔔</button>
+                <button class="perfil">👤</button>
+                <select id="perfil" name="opção"><br>
+                <option valueid="Perfil">Perfil</option>
+                <option icon="⚙️" valueid="Configuração">Configuração</option>
+                <option icon="🔴" valueid="Sair">Sair</option>
+            </select>
+            </div>

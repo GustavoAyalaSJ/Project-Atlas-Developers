@@ -1,0 +1,97 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const estadoSelect = document.getElementById('estado-select');
+    const municipioSelect = document.getElementById('municipio-select');
+    const nivelSelect = document.getElementById('nivel-select');
+    const foundJobsMessage = document.getElementById('found-jobs-message');
+
+    const estadosDoBrasil = [
+        { uf: 'AC', nome: 'Acre' },
+        { uf: 'AL', nome: 'Alagoas' },
+        { uf: 'AP', nome: 'Amapá' },
+        { uf: 'AM', nome: 'Amazonas' },
+        { uf: 'BA', nome: 'Bahia' },
+        { uf: 'CE', nome: 'Ceará' },
+        { uf: 'DF', nome: 'Distrito Federal' },
+        { uf: 'ES', nome: 'Espírito Santo' },
+        { uf: 'GO', nome: 'Goiás' },
+        { uf: 'MA', nome: 'Maranhão' },
+        { uf: 'MT', nome: 'Mato Grosso' },
+        { uf: 'MS', nome: 'Mato Grosso do Sul' },
+        { uf: 'MG', nome: 'Minas Gerais' },
+        { uf: 'PA', nome: 'Pará' },
+        { uf: 'PB', nome: 'Paraíba' },
+        { uf: 'PR', nome: 'Paraná' },
+        { uf: 'PE', nome: 'Pernambuco' },
+        { uf: 'PI', nome: 'Piauí' },
+        { uf: 'RJ', nome: 'Rio de Janeiro' },
+        { uf: 'RN', nome: 'Rio Grande do Norte' },
+        { uf: 'RS', nome: 'Rio Grande do Sul' },
+        { uf: 'RO', nome: 'Rondônia' },
+        { uf: 'RR', nome: 'Roraima' },
+        { uf: 'SC', nome: 'Santa Catarina' },
+        { uf: 'SP', nome: 'São Paulo' },
+        { uf: 'SE', 'nome': 'Sergipe' },
+        { uf: 'TO', nome: 'Tocantins' }
+    ];
+
+    const municipiosPorEstado = {
+        'AC': ['Rio Branco', 'Cruzeiro do Sul', 'Sena Madureira'],
+        'AL': ['Maceió', 'Arapiraca', 'Palmeira dos Índios'],
+        'AP': ['Macapá', 'Santana', 'Laranjal do Jari'],
+        'AM': ['Manaus', 'Parintins', 'Itacoatiara'],
+        'BA': ['Salvador', 'Feira de Santana', 'Vitória da Conquista'],
+        'CE': ['Fortaleza', 'Caucaia', 'Juazeiro do Norte'],
+        'DF': ['Brasília'],
+        'ES': ['Vitória', 'Vila Velha', 'Serra'],
+        'GO': ['Goiânia', 'Aparecida de Goiânia', 'Anápolis'],
+        'MA': ['São Luís', 'Imperatriz', 'Timon'],
+        'MT': ['Cuiabá', 'Várzea Grande', 'Rondonópolis'],
+        'MS': ['Campo Grande', 'Dourados', 'Três Lagoas'],
+        'MG': ['Belo Horizonte', 'Uberlândia', 'Contagem', 'Juiz de Fora', 'Betim'],
+        'PA': ['Belém', 'Ananindeua', 'Santarém'],
+        'PB': ['João Pessoa', 'Campina Grande', 'Patos'],
+        'PR': ['Curitiba', 'Londrina', 'Maringá'],
+        'PE': ['Recife', 'Jaboatão dos Guararapes', 'Olinda'],
+        'PI': ['Teresina', 'Parnaíba', 'Picos'],
+        'RJ': ['Rio de Janeiro', 'Niterói', 'Duque de Caxias', 'Nova Iguaçu', 'São Gonçalo'],
+        'RN': ['Natal', 'Mossoró', 'Parnamirim'],
+        'RS': ['Porto Alegre', 'Caxias do Sul', 'Canoas'],
+        'RO': ['Porto Velho', 'Ji-Paraná', 'Ariquemes'],
+        'RR': ['Boa Vista', 'Rorainópolis', 'Caracaraí'],
+        'SC': ['Florianópolis', 'Joinville', 'Blumenau'],
+        'SP': ['São Paulo', 'Guarulhos', 'Campinas', 'São Bernardo do Campo', 'Santo André'],
+        'SE': ['Aracaju', 'Nossa Senhora do Socorro', 'Lagarto'],
+        'TO': ['Palmas', 'Araguaína', 'Gurupi']
+    };
+
+    function preencherEstados() {
+        estadosDoBrasil.forEach(estado => {
+            const option = document.createElement('option');
+            option.value = estado.uf;
+            option.textContent = estado.nome;
+            estadoSelect.appendChild(option);
+        });
+    }
+
+    estadoSelect.addEventListener('change', () => {
+        const estadoSelecionado = estadoSelect.value;
+        municipioSelect.innerHTML = '<option value="">Selecione um Município</option>';
+
+        if (estadoSelecionado) {
+            const municipios = municipiosPorEstado[estadoSelecionado] || [];
+            municipios.forEach(municipio => {
+                const option = document.createElement('option');
+                option.value = municipio;
+                option.textContent = municipio;
+                municipioSelect.appendChild(option);
+            });
+            municipioSelect.disabled = false;
+        } else {
+            municipioSelect.disabled = true;
+        }
+    });
+
+    foundJobsMessage.textContent = "Não há empregos disponíveis no momento.";
+
+    preencherEstados();
+});

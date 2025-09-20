@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas Developers</title>
+    <link rel="stylesheet" href="CSS/index3.css">
+    <link rel="stylesheet" href="#">
+    <script src="Java Script/script.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <div class="background-container">
+        <header class="cabeçalho">
+            <a href="IntroducedPage.html" class="logo-link">
+                <div class="logotipo">
+                    <img src="Assets/Logotipo.png" alt="AD logo">
+                    <span>Atlas Developers</span>
+                </div>
+            </a>
+            <nav class="nav-menu">
+                <button class="nav-button">VAGAS</button>
+                <div class="search-bar">
+                    <input type="text" placeholder="O que busca?">
+                    <button class="search-icon">🔍</button>
+                </div>
+            </nav>
+            <div class="user-actions">
+                <button class="icon-button">🔔</button>
+                <button class="icon-button">👤</button>
+            </div>
+        </header>
+
+        <main class="main-content-login">
+            <div class="login-card">
+                <p class="selection-info">Você selecionou: <strong>EMPRESA</strong></p>
+
+                <form class="login-form">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Digite o seu email">
+
+                    <label for="password">Senha:</label>
+                    <div class="password-input-container">
+                        <input type="password" id="password" placeholder="Digite a sua senha">
+                        <i class="bi bi-eye-fill" id="togglePassword" onclick="MostrarSenha()"></i>
+                    </div>
+
+                    <a href="#" class="forgot-password">Esqueceu a senha?</a>
+
+                    <button type="submit" class="login-button">LOGAR</button>
+
+                    <p class="divider">ou</p>
+
+                    <a href="empresa_cadastro.html" class="register-button">CADASTRE-SE</a>
+
+                </form>
+
+                <p class="terms-privacy">
+                    Ao conectar-se com este site, você estará concordando
+                    com nossos <a href="#">Termos de Uso</a> e <a href="#">Políticas de Privacidade</a>.
+                </p>
+            </div>
+        </main>
+</body>
+
+</html>

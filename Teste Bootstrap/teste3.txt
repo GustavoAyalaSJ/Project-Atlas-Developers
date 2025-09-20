@@ -1,0 +1,30 @@
+        <main class="main-content-login">
+            <div class="login-card">
+                <p class="selection-info">Você selecionou: <strong>CANDIDATO</strong></p>
+
+                <form class="login-form">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Digite o seu email">
+
+                    <label for="password">Senha:</label>
+                    <div class="password-input-container">
+                        <input type="password" id="password" placeholder="Digite a sua senha">
+                        <i class="bi bi-eye-fill" id="togglePassword" onclick="MostrarSenha()"></i>
+                    </div>
+
+                    <a href="#" class="forgot-password">Esqueceu a senha?</a>
+
+                    <button type="submit" class="login-button">LOGAR</button>
+
+                    <p class="divider">ou</p>
+
+                    <a href="empresa_cadastro.html" class="register-button">CADASTRE-SE</a>
+
+                </form>
+
+                <p class="terms-privacy">
+                    Ao conectar-se com este site, você estará concordando
+                    com nossos <a href="#">Termos de Uso</a> e <a href="#">Políticas de Privacidade</a>.
+                </p>
+            </div>
+        </main>
