@@ -1,18 +1,25 @@
-~Atlas Developers~
+======= Atlas Developers CHANGELOGS =======
 
-Projeto criado para Senai Campus da Indústria
+(25-06)
+- Criação dos primeiros designs para o site protipado;
+- Desenvolvimento de ideias para criação de um site / identidade baseado em uma demanda no site FIEMG - Senai.
 
-Ainda sendo construído (Sujeito a não termino do site, devido ao prazo da demanda)
+(26-06)
+- Desenvolvimento do logotipo do site e o desenvolvimento dos primeiros sites HTML;
+- Correção de erros na estruturação CSS da página.
 
-Sugestões para adições no site:
-- Bloqueio de voltar a página inicial pela página do usuário;
-- Área de Cadastro para empresas e candidatos;
-- Página de anúncios (onde empresas anunciam vagas ou notícias externas do mercado de desenvolvedores no geral, consequentemente, aparecer na página de perfil);
-- Botão do Perfil (Acesso ao perfil, vagas de interesse, configurações);
-- Configurações (ainda pensando);
-- Zona de Currículo online (ideia);
-- Notificações sobre novas vagas (baseado no perfil);
-- Possibilidade de login por outras plataformas;
-- Perfil (Linkar perfil do LinkedIn e GitHub);
+(22-08)
+- Atualização e Remasterização do projeto;
+- Criações de pastas para organização e manuseamento do projeto;
+- Adição do Java Script nas páginas (User e Vagas);
+- Mudança de imagens / assets com sujeita a direitos autorais;
+- Criação de uma tabela de ideias e adições para o site.
 
-- outras ideias em breve.
+(09-09)
+- Testando o Bootstrap para futura redução de páginas.
+
+(17-10)
+- Melhoria no JS da página (Vagas);
+- Remoção dos botões de action user das páginas iniciais;
+- Adição de modal para links externos;
+- Criação de um dropdown para o botão de notificações e perfil.
