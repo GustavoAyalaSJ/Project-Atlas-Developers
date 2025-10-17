@@ -1,39 +1,12 @@
-============ ATLAS DEVELOPERS (Version 0) ===================
+~Atlas Developers~
 
-CHANGELOGS:
+Projeto criado para Senai Campus da Indústria
 
-(26-06)
-- Criação do projeto e estilização das primeiras páginas;
+Ainda sendo construído (Sujeito a não termino do site, devido ao prazo da demanda)
 
-============ ATLAS DEVELOPERS (Version 0.1) ===================
-
-CHANGELOGS:
-
-(22-08)
-- Remasterização do projeto;
-- Redução de Assets / Imagens com direitos autorais;
-- Mudanças na interface;
-- Adição de Java Script ao projeto.
-
-(09-09)
-- Testes com Bootstrap.
-
-============ ATLAS DEVELOPERS (Version 0.25) ===================
-
-CHANGELOGS:
-
-(17-10)
-- Remoção dos botões de navegação das páginas (IntroducePage, LoginPageCandidato e Empresa);
-- Alteração na Logotipo;
-- Adição de modal nos links do rodapé no IntroducePage);
-- Substituindo os ícones de emoji por ícones do Bootstrap;
-- Colocando responsivo nas páginas que não possuem;
-- Atualização do Java Script da página de vagas.
-
-
-==== Conteúdos que podem vir ao protótipo do site no futuro ====
-
-- Área de cadastro para empresas e candidatos;
+Sugestões para adições no site:
+- Bloqueio de voltar a página inicial pela página do usuário;
+- Área de Cadastro para empresas e candidatos;
 - Página de anúncios (onde empresas anunciam vagas ou notícias externas do mercado de desenvolvedores no geral, consequentemente, aparecer na página de perfil);
 - Botão do Perfil (Acesso ao perfil, vagas de interesse, configurações);
 - Configurações (ainda pensando);
