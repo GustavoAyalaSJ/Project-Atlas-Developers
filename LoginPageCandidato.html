@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atlas Developers</title>
     <link rel="stylesheet" href="CSS/index2.css">
-    <link rel="stylesheet" href="#">
-    <script src="Java Script/script.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 
@@ -16,21 +14,9 @@
         <header class="cabeçalho">
             <a href="IntroducedPage.html" class="logo-link">
                 <div class="logotipo">
-                    <img src="Assets/Logotipo.png" alt="AD logo">
-                    <span>Atlas Developers</span>
+                    <img src="Assets/Logo-white.png" alt="AD logo">
                 </div>
             </a>
-            <nav class="nav-menu">
-                <button class="nav-button">VAGAS</button>
-                <div class="search-bar">
-                    <input type="text" placeholder="O que busca?">
-                    <button class="search-icon">🔍</button>
-                </div>
-            </nav>
-            <div class="user-actions">
-                <button class="icon-button">🔔</button>
-                <button class="icon-button">👤</button>
-            </div>
         </header>
 
         <main class="main-content-login">
@@ -53,16 +39,31 @@
 
                     <p class="divider">ou</p>
 
-                    <a href="empresa_cadastro.html" class="register-button">CADASTRE-SE</a>
+                    <a href="#" class="register-button">CADASTRE-SE</a>
 
                 </form>
 
+                <div id="TermosModal" class="modal">
+                    <div class="modal-content">
+                        <h2 class="termos-text">Termos e Serviços</h2>
+                        <p class="termos">PLACEHOLDER</p>
+                    </div>
+                </div>
+
+                <div id="PrivacidadeModal" class="modal">
+                    <div class="modal-content">
+                        <h2 class="privacidade-text">Políticas de Privacidade</h2>
+                        <p class="privacidade">PLACEHOLDER</p>
+                    </div>
+                </div>
+
                 <p class="terms-privacy">
                     Ao conectar-se com este site, você estará concordando
-                    com nossos <a href="#">Termos de Uso</a> e <a href="#">Políticas de Privacidade</a>.
+                    com nossos <a onclick="openTermosModal()">Termos de Uso</a> e <a onclick="openPrivacidadeModal()">Políticas de Privacidade</a>.
                 </p>
             </div>
         </main>
+        <script src="Java Script/script.js"></script>
 </body>
 
 </html>

@@ -1,13 +1,13 @@
-body,html {
+/* ====================== Reset e Global ====================== */
+body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
 }
 
-/* Fundo */
 .background-container {
-    background-image: url('Fundo4.jpg'); /* Verifique se o caminho da imagem está correto */
+    background-image: url('Fundo4.jpg'); /* verifique se o caminho está correto */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -18,7 +18,7 @@ body,html {
     overflow-y: auto;
 }
 
-/* Cabeçalho */
+/* ====================== Cabeçalho ====================== */
 .cabeçalho {
     background-color: rgba(0, 0, 0, 0.4);
     padding: 17px 20px;
@@ -44,15 +44,7 @@ body,html {
     margin-right: 15px;
 }
 
-.logotipo span {
-    font-size: 1.1em;
-    color: white;
-    margin: 0;
-    padding: 0;
-    margin-right: 10px;
-}
-
-.logo-link{
+.logo-link {
     text-decoration: none;
 }
 
@@ -64,7 +56,7 @@ body,html {
 }
 
 .nav-button {
-    background-color: #8C64FF;
+    background-color: #1a3685;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -73,6 +65,11 @@ body,html {
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
+}
+
+.nav-button:hover{
+    background-color: #1f4ecf;
+    transform: scale(1.09);
 }
 
 .search-bar {
@@ -98,7 +95,7 @@ body,html {
 }
 
 .search-icon {
-    background-color: #8C64FF;
+    background-color: #1a3685;
     color: white;
     border: none;
     border-radius: 50%;
@@ -117,8 +114,8 @@ body,html {
 }
 
 .icon-button {
-    background-color: rgba(140, 100, 255, 0.8);
-    color: white; /* Cor do ícone */
+    background-color: #1a3685;
+    color: white;
     border: none;
     border-radius: 50%;
     width: 40px;
@@ -130,26 +127,69 @@ body,html {
     cursor: pointer;
 }
 
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+
+.notification-text {
+    color: black;
+    font-size: 1em;
+    text-align: center;
+}
+
+.notification-warning {
+    color: black;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+/* ====================== Main - Vagas ====================== */
 .main-content-vagas {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     padding: 20px;
     gap: 5px;
-    max-width: 1500;
+    max-width: 1500px;
     margin: auto;
 }
 
-/* FILTROS */
+/* ---- Filtros ---- */
 .filters-section {
     display: flex;
     gap: 10px;
-    justify-content: center; 
+    justify-content: center;
     margin-bottom: 25px;
     flex-wrap: nowrap;
 }
 
-/* ESTILOS DOS SELECTS PARA PARECEREM BOTÕES (ANTIGO FILTER-BUTTON) */
 #estado-select,
 #municipio-select,
 #nivel-select {
@@ -164,7 +204,7 @@ body,html {
     white-space: nowrap;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
-    appearance: auto; 
+    appearance: auto;
     -webkit-appearance: none;
     -moz-appearance: none;
     background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
@@ -186,7 +226,7 @@ body,html {
     opacity: 0.7;
 }
 
-/* WRAPPER DA LISTA DE VAGAS E PAINEL LATERAL */
+/* ---- Wrapper Listagem de Vagas e Painel ---- */
 .vagas-content-wrapper {
     display: flex;
     flex-grow: 1;
@@ -195,7 +235,7 @@ body,html {
     flex-wrap: wrap;
 }
 
-/* Lista de vagas - lateral */
+/* ---- Lista de Vagas ---- */
 .job-listings {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
@@ -206,15 +246,8 @@ body,html {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    overflow-y: auto; 
+    overflow-y: auto;
     max-height: calc(100vh - 250px);
-}
-
-.found-jobs {
-    font-size: 0.9em;
-    color: #666;
-    margin-bottom: 15px;
-    text-align: auto;
 }
 
 .job-card {
@@ -246,7 +279,7 @@ body,html {
 }
 
 .job-card p {
-    grid-column: 1 / 2; 
+    grid-column: 1 / 2;
     font-size: 0.9em;
     color: #666;
     margin: 0;
@@ -270,26 +303,7 @@ body,html {
     transform: scale(1.1);
 }
 
-/* Mais informações */
-
-.mais-informacoes-button {
-    grid-column: 1 / 2;
-    justify-self: scretch;
-    background-color: #8C64FF;
-    color: white;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 20px;
-    font-size: 0.85em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
-}
-
-.mais-informacoes-button:hover {
-    background-color: #7a54e6;
-}
-
+/* ---- Painel Mais Informações ---- */
 .more-info-panel {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 25px;
@@ -311,15 +325,6 @@ body,html {
     border-bottom: 2px solid #8C64FF;
     padding-bottom: 10px;
     width: 90%;
-}
-
-.more-info-panel p {
-    font-size: 0.9em;
-    color: #555;
-    margin-bottom: 8px;
-    line-height: 1.4;
-    text-align: left;
-    width: 100%;
 }
 
 .company-name {
@@ -378,7 +383,7 @@ body,html {
 }
 
 .contact-icon {
-    background-color: #8C64FF;
+    background-color: #1f4ecf;
     color: white;
     width: 40px;
     height: 40px;
@@ -393,17 +398,18 @@ body,html {
 }
 
 .contact-icon:hover {
-    background-color: #7a54e6;
+    background-color: #1f4ecf;
 }
 
-/* Rodapé */
+/* ====================== Rodapé ====================== */
 .rodape {
-    background: linear-gradient(135deg, #342464, #7a54e6);
+    background: linear-gradient(135deg, #112b72, #1f4ecf);
     color: #fff;
     padding: 15px 20px;
     text-align: center;
     width: 100%;
 }
+
 .rodape-links {
     display: flex;
     justify-content: center;
@@ -419,10 +425,132 @@ body,html {
 }
 
 .rodape-links a:hover {
-    color: #8C64FF;
+    color: #dbe5ff;
 }
 
 .separador {
-    color: #8C64FF;
+    color: #3d71ff;
     font-size: 1.1em;
+}
+
+/* ====================== Media Queries ====================== */
+@media (max-width: 1200px) {
+    .nav-menu {
+        margin-left: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .filters-section {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .vagas-content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .more-info-panel {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .cabeçalho {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        height: auto;
+        padding: 10px;
+    }
+
+    .logotipo img {
+        height: 60px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        margin-left: 0;
+        gap: 10px;
+    }
+
+    .search-bar {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .search-bar input {
+        width: 100%;
+    }
+
+    .user-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .filters-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .job-listings {
+        max-height: none;
+        width: 100%;
+    }
+
+    .more-info-panel {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .logotipo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nav-button {
+        padding: 8px 16px;
+        font-size: 0.85em;
+    }
+
+    .search-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 0.9em;
+    }
+
+    .icon-button {
+        width: 35px;
+        height: 35px;
+        font-size: 1em;
+    }
+
+    .job-card {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        gap: 10px;
+    }
+
+    .favorite-button {
+        grid-column: 1 / 2;
+        justify-self: start;
+    }
+
+    .contact-icons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .rodape-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .separador {
+        display: none;
+    }
 }

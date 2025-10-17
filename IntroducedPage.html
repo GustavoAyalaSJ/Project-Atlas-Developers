@@ -12,19 +12,7 @@
     <div class="background-container">
         <header class="cabeçalho">
             <div class="logotipo">
-                <img src="Assets/Logotipo.png" alt="AD logo">
-                <span>Atlas Developers</span>
-            </div>
-            <nav class="nav-menu">
-                <button class="nav-button">VAGAS</button>
-                <div class="search-bar">
-                    <input type="text" placeholder="O que busca?">
-                    <button class="search-icon">🔍</button>
-                </div>
-            </nav>
-            <div class="user-actions">
-                <button class="icon-button">🔔</button>
-                <button class="icon-button">👤</button>
+                <img src="Assets/Logo-white.png" alt="AD logo">
             </div>
         </header>
 
@@ -46,13 +34,36 @@
             </div>
         </main>
     </div>
+
+    <div id="TermosModal" class="modal">
+        <div class="modal-content">
+            <h2 class="informações-text">Termos e Serviços</h2>
+            <p class="informações">PLACEHOLDER</p>
+        </div>
+    </div>
+
+    <div id="PerguntasModal" class="modal">
+        <div class="modal-content">
+            <h2>Selecione o tipo de pergunta pelos <span class="destacar">botões</span> abaixo:</h2>
+            <div class="button-group">
+                <button class="pergunta1">Botão 1</button>
+                <button class="pergunta2">Botão 2</button>
+                <button class="pergunta3">Botão 3</button>
+                <button class="pergunta4">Botão 4</button>
+                <button class="pergunta5">Botão 5</button>
+            </div>
+        </div>
+    </div>
     <footer class="rodape">
         <div class="rodape-links">
-            <a href="#">Termos e Serviços</a>
+            <button id="open-termos-btn-footer" onclick="openTermosModal()" class="link-button">Termos e Serviços</button>
+
             <span class="separador">|</span>
-            <a href="#">Perguntas Questionadas sobre o site</a>
+
+            <button id="open-perguntas-btn-footer" onclick="openPerguntasModal()" class="link-button">Perguntas Frequentes</button>
         </div>
     </footer>
+    <script src="Java Script/script4.js"></script>
 </body>
 
 </html>

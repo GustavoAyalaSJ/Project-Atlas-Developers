@@ -1,36 +1,23 @@
-function MostrarSenha() {
-    const input = document.getElementById("password");
-    const icon = document.getElementById("togglePassword");
-
-    if (input.type === "password") {
-        input.type = "text";
-        icon.classList.replace("bi-eye-fill", "bi-eye-slash-fill");
-    } else {
-        input.type = "password";
-        icon.classList.replace("bi-eye-slash-fill", "bi-eye-fill");
-    }
-}
-
 function openTermosModal() {
     const termosModal = document.getElementById('TermosModal');
     termosModal.style.display = 'block'; 
 }
 
-function openPrivacidadeModal() {
-    const perguntasModal = document.getElementById('PrivacidadeModal');
+function openPerguntasModal() {
+    const perguntasModal = document.getElementById('PerguntasModal');
     perguntasModal.style.display = 'block';
 }
 
 function closeAllModals() {
     const termosModal = document.getElementById('TermosModal');
-    const perguntasModal = document.getElementById('PrivacidadeModal');
+    const perguntasModal = document.getElementById('PerguntasModal');
     termosModal.style.display = 'none';
     perguntasModal.style.display = 'none';
 }
 
 document.addEventListener('DOMContentLoaded', function() {
     const termosModal = document.getElementById('TermosModal');
-    const perguntasModal = document.getElementById('PrivacidadeModal');
+    const perguntasModal = document.getElementById('PerguntasModal');
 
     window.addEventListener('click', function(event) {
         if (event.target == termosModal || event.target == perguntasModal) {

@@ -47,14 +47,6 @@ body,html {
     margin-right: 15px;
 }
 
-.logotipo span {
-    font-size: 1.1em;
-    color: white;
-    margin: 0;
-    padding: 0;
-    margin-right: 10px;
-}
-
 .nav-menu {
     display: flex;
     align-items: center;
@@ -63,7 +55,7 @@ body,html {
 }
 
 .nav-button {
-    background-color: #8C64FF;
+    background-color: #1a3685;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -72,6 +64,11 @@ body,html {
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
+}
+
+.nav-button:hover {
+    background-color: #1f4ecf;
+    transform: scale(1.09);
 }
 
 .search-bar {
@@ -97,7 +94,7 @@ body,html {
 }
 
 .search-icon {
-    background-color: #8C64FF;
+    background-color: #1a3685;
     color: white;
     border: none;
     border-radius: 50%;
@@ -116,7 +113,7 @@ body,html {
 }
 
 .icon-button {
-    background-color: rgba(140, 100, 255, 0.8);
+    background-color: #1a3685;
     color: white; /* Cor do ícone */
     border: none;
     border-radius: 50%;
@@ -227,12 +224,54 @@ body,html {
     transition: transform 0.2s ease;
 }
 
+.notification-text{
+    color: black;
+    font-size: 1em;
+    text-align: center;
+}
+
+.notification-warning {
+    color: black;
+    font-size: 0.9em;
+    text-align: center;
+}
+
 .unfavorite-button:hover {
     transform: scale(1.1);
     color: #b30000;
 }
 
-/* Media Queries para responsividade */
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none; 
+    position: absolute;
+    right: 0;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+
 @media (max-width: 900px) {
     .profile-panels {
         flex-direction: column;
@@ -245,25 +284,45 @@ body,html {
 }
 
 @media (max-width: 600px) {
-    .header {
+    .cabeçalho {
         flex-direction: column;
         gap: 10px;
         align-items: center;
     }
-    .nav-menu, .header-right-actions {
+
+    .nav-menu, .user-actions {
         width: 100%;
         justify-content: center;
         margin-left: 0;
         margin-right: 0;
+        flex-wrap: wrap;
     }
+
     .search-bar {
         width: 100%;
+        justify-content: center;
     }
+
     .search-bar input {
-        width: auto;
-        flex-grow: 1;
+        width: 100%;
     }
+
     .search-icon {
         margin-right: 0;
+    }
+
+    .logotipo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logotipo img {
+        height: 60px;
+        margin-bottom: 10px;
+    }
+
+    .logotipo span {
+        font-size: 1em;
     }
 }

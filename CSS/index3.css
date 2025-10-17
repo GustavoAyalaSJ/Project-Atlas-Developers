@@ -24,7 +24,7 @@ body,html {
     background-color: rgba(0, 0, 0, 0.4);
     padding: 17px 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     color: white;
     height: 50px;
@@ -47,88 +47,25 @@ body,html {
     margin-right: 15px;
 }
 
-.logotipo span {
-    font-size: 1.1em;
-    color: white;
-    margin: 0;
-    padding: 0;
-    margin-right: 10px;
-}
-
-.nav-menu {
-    display: flex;
-    align-items: center;
-    margin-left: 700px;
-    gap: 14px;
-}
-
-.nav-button {
-    background-color: #8C64FF;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: bold;
-    text-transform: uppercase;
+.logo-link {
     text-decoration: none;
-}
-
-.search-bar {
+    color: white;
     display: flex;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    padding: 5px;
-}
-
-.search-bar input {
-    background: none;
-    border: none;
-    outline: none;
-    color: white;
     padding: 5px 10px;
-    font-size: 0.9em;
-    width: 150px;
-}
-
-.search-bar input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.search-icon {
-    background-color: #8C64FF;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+    border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
-.user-actions {
-    display: flex;
-    gap: 15px;
+.logo-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
-.icon-button {
-    background-color: rgba(140, 100, 255, 0.8);
+.logo-link .logo span {
     color: white;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2em;
-    cursor: pointer;
 }
 
+/* Main-Content */
 .main-content-login {
     flex-grow: 1;
     display: flex;
@@ -273,6 +210,52 @@ div i{
     color: white;
 }
 
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+}
+
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.5em;
+}
+
+/* Termos */
+
 .terms-privacy {
     font-size: 0.8em;
     color: #777;
@@ -288,22 +271,109 @@ div i{
 
 .terms-privacy a:hover {
     text-decoration: underline;
+    cursor: pointer;
 }
 
-.logo-link {
-    text-decoration: none;
-    color: white;
-    display: flex;
-    align-items: center;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+@media (max-width: 992px) {
+    .login-card {
+        width: 80%;
+        padding: 20px;
+    }
+
+    .logotipo img {
+        height: 70px;
+    }
+
+    div i {
+        left: 90%;
+    }
 }
 
-.logo-link:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+@media (max-width: 768px) {
+    body, html {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .cabeçalho {
+        padding: 10px 15px;
+        height: auto;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logotipo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logotipo img {
+        height: 60px;
+        margin-bottom: 10px;
+    }
+
+    .main-content-login {
+        flex-direction: column;
+        padding: 40px 5%;
+    }
+
+    .login-card {
+        width: 100%;
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .login-form input[type="email"],
+    .password-input-container input {
+        font-size: 0.95em;
+    }
+
+    div i {
+        left: 85%;
+    }
+
+    .login-button,
+    .register-button {
+        font-size: 1em;
+        padding: 12px;
+    }
+
+    .terms-privacy {
+        margin-top: 20px;
+        text-align: center;
+    }
 }
 
-.logo-link .logo span {
-    color: white;
+@media (max-width: 480px) {
+    .login-card {
+        padding: 15px;
+    }
+
+    .login-form label {
+        font-size: 0.9em;
+    }
+
+    .login-form input[type="email"],
+    .password-input-container input {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    div i {
+        left: 80%;
+    }
+
+    .login-button,
+    .register-button {
+        font-size: 0.95em;
+        padding: 10px;
+    }
+
+    .selection-info {
+        font-size: 1em;
+    }
+
+    .terms-privacy {
+        font-size: 0.75em;
+    }
 }
