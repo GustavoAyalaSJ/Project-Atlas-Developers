@@ -23,3 +23,6 @@
 - Remoção dos botões de action user das páginas iniciais;
 - Adição de modal para links externos;
 - Criação de um dropdown para o botão de notificações e perfil.
+
+(21-10)
+- Testes com React na primeira página. 
