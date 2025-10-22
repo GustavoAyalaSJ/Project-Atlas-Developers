@@ -16,7 +16,8 @@
                 <img src="Assets/Nexora-light.png" alt="Nexora logo">
             </div>
             <a href="#sobre">Sobre</a>
-            <a href="#" onclick="openTermosModal()">Termos e Serviços</a>
+            <a href="#">Termos e Serviços</a>
+            <a href="#">Suporte</a>
         </header>
 
         <main class="main-content">
@@ -70,27 +71,27 @@
                 <input type="email" id="email" placeholder="Digite o seu email">
 
                 <label for="password">Senha:</label>
-                    <div class="password-input-container">
-                        <input type="password" id="password" placeholder="Digite a sua senha">
-                        <i class="bi bi-eye-fill" id="togglePassword" onclick="MostrarSenha()"></i>
-                    </div>
+                <div class="password-input-container">
+                    <input type="password" id="password" placeholder="Digite a sua senha">
+                    <i class="bi bi-eye-fill" id="togglePassword" onclick="MostrarSenha()"></i>
+                </div>
 
-                    <a href="#" class="forgot-password">Esqueceu a senha?</a>
+                <a href="#" class="forgot-password">Esqueceu a senha?</a>
 
-                    <form class="login-form" action="UserPage.html" method="GET"> 
-                        <button type="submit" class="login-button">LOGAR</button>
-                    </form>
+                <form class="login-form" action="UserPage.html" method="GET">
+                    <button type="submit" class="login-button">LOGAR</button>
+                </form>
 
-                    <p class="divider">ou</p>
+                <p class="divider">ou</p>
 
-                    <a href="#" class="register-button">CADASTRE-SE</a>
+                <a href="#" class="register-button">CADASTRE-SE</a>
 
-                    <p class="terms-privacy">
-                        Ao conectar-se com este site, você estará concordando
-                        com nossos <a onclick="openTermosModal()">Termos de Uso</a> e <a
-                            onclick="openPrivacidadeModal()">Políticas
-                            de Privacidade</a>.
-                    </p>
+                <p class="terms-privacy">
+                    Ao conectar-se com este site, você estará concordando
+                    com nossos <a onclick="openTermosModal()">Termos de Uso</a> e <a
+                        onclick="openPrivacidadeModal()">Políticas
+                        de Privacidade</a>.
+                </p>
 
             </form>
 
@@ -99,7 +100,7 @@
 
     <div id="TermosModal" class="modal">
         <div class="modal-content">
-            <h2 class="termos-text">Termos e Serviços</h2>
+            <h2 class="termos-text">Termos e Uso</h2>
             <p class="termos">PLACEHOLDER</p>
         </div>
     </div>
