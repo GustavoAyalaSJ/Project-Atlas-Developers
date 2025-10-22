@@ -25,4 +25,5 @@
 - Criação de um dropdown para o botão de notificações e perfil.
 
 (21-10)
-- Testes com React na primeira página. 
+- Testes com React na primeira página;
+- Mudança no nome de Atlas Developers para Nexora Line.
