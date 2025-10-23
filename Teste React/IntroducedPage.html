@@ -1,116 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexora - Introdução</title>
-    <link rel="stylesheet" href="#">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexora - Introdução</title>
+  <link rel="stylesheet" href="CSS/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 </head>
 
 <body>
-    <div class="background-container">
-        <header class="cabeçalho">
-            <div class="logotipo">
-                <img src="Assets/Nexora-light.png" alt="Nexora logo">
-            </div>
-            <a href="#sobre">Sobre</a>
-            <a href="#">Termos e Serviços</a>
-            <a href="#">Suporte</a>
-        </header>
+  <div class="background-container">
+    <header class="cabeçalho">
+      <div class="logotipo">
+        <img src="Assets/Nexora-light.png" alt="Nexora logo" />
+      </div>
+      <div id="react-header-links"></div>
+    </header>
 
-        <main class="main-content">
-            <div class="container-left">
-                <section class="left" id="sobre">
-                    <h1>Nexora Line</h1>
-                    <h2>Sobre:</h2>
-                    <p>Nexora Line é um site lider no ramo tecnológico, especializado no gerenciamento de vagas de
-                        emprego
-                        para Desenvolvedores. Nosso compromisso é com a inovação, oferecendo aos nossos clientes e
-                        para as empresas, ferramentas para facilitar a busca por ambos. Nosso ambiente web é fácil e
-                        dinâmico, pois, graças a tecnologia temos o potencial de mudar a busca
-                        pelo emprego e dedicação para o futuro. Junte-se a nós!
-                    </p>
-                </section>
-                <div class="botãounderText-left">
-                    <button>Entrar<i class="bi bi-box-arrow-in-right"></i></button>
-                </div>
-            </div>
-            <section class="container-right">
-                <div class="block">
-                    <span>PlaceHolder<br>IMAGE</span>
-                </div>
-            </section>
-        </main>
+    <main class="main-content">
+      <div class="container-left">
+        <section class="left" id="sobre">
+          <h1>Nexora Line</h1>
+          <h2>Sobre:</h2>
+          <p>
+            Nexora Line é um site líder no ramo tecnológico, especializado no gerenciamento de vagas de emprego para Desenvolvedores. Nosso compromisso é com a inovação, oferecendo aos nossos clientes e empresas ferramentas para facilitar a busca por ambos. Nosso ambiente web é fácil e dinâmico, pois, graças à tecnologia temos o potencial de mudar a busca pelo emprego e dedicação para o futuro. Junte-se a nós!
+          </p>
+        </section>
+        <div id="react-button-underTextleft"></div>
+        <div id="react-form-label"></div>
+      </div>
 
-        <footer class="rodape">
-            <p>Nexora Line 2025 - Todos os direitos reservados | Contato: NextLine@nexora.com</p>
-        </footer>
-    </div>
+      <div id="react-containerImage-right">
+        <!-- DISPLAY DE IMAGEM -->
+      </div>
+    </main>
 
-    <div class="modal-selector">
-        <div class="selector-role-left">
-            <div class="role-selection-card">
-                <h2>Você está cadastrado como?</h2>
-                <button class="role-button candidato">CANDIDATO</button>
-                <p>ou</p>
-                <button class="role button empresa">EMPRESA</button>
-            </div>
-        </div>
-    </div>
-    <div class="modal-login">
-        <div class="login-card-right">
-            <div class="aviso" id="avisoIdade">
-                <span>Nexora recomenda login / cadastro acima de 18 anos segundo a legislação brasileira.</span>
-            </div>
-            <p class="selection-info">Você selecionou: <strong>CANDIDATO</strong></p>
+    <footer class="rodape">
+      <p>Nexora Line © 2025 - Todos os direitos reservados | Contato: NexLine@nexora.com</p>
+    </footer>
+  </div>
 
-            <form class="login-form">
-                <label for="email">Email:</label>
-                <input type="email" id="email" placeholder="Digite o seu email">
+  <div id="root"></div>
 
-                <label for="password">Senha:</label>
-                <div class="password-input-container">
-                    <input type="password" id="password" placeholder="Digite a sua senha">
-                    <i class="bi bi-eye-fill" id="togglePassword" onclick="MostrarSenha()"></i>
-                </div>
-
-                <a href="#" class="forgot-password">Esqueceu a senha?</a>
-
-                <form class="login-form" action="UserPage.html" method="GET">
-                    <button type="submit" class="login-button">LOGAR</button>
-                </form>
-
-                <p class="divider">ou</p>
-
-                <a href="#" class="register-button">CADASTRE-SE</a>
-
-                <p class="terms-privacy">
-                    Ao conectar-se com este site, você estará concordando
-                    com nossos <a onclick="openTermosModal()">Termos de Uso</a> e <a
-                        onclick="openPrivacidadeModal()">Políticas
-                        de Privacidade</a>.
-                </p>
-
-            </form>
-
-        </div>
-    </div>
-
-    <div id="TermosModal" class="modal">
-        <div class="modal-content">
-            <h2 class="termos-text">Termos e Uso</h2>
-            <p class="termos">PLACEHOLDER</p>
-        </div>
-    </div>
-
-    <div id="PrivacidadeModal" class="modal">
-        <div class="modal-content">
-            <h2 class="privacidade-text">Políticas de Privacidade</h2>
-            <p class="privacidade">PLACEHOLDER</p>
-        </div>
-    </div>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel" src="src/script1.jsx"></script>
 </body>
 
 </html>
