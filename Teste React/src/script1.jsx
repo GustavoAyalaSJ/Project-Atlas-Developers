@@ -9,6 +9,7 @@ function HeaderLinks() {
     <>
       <div className="header-links">
         <a onClick={handleAbrirTermos}>Termos e Serviços</a>
+        <span className="separador">|</span>
         <a onClick={handleAbrirSuporte} style={{ marginLeft: '10px' }}>Suporte</a>
       </div>
 
@@ -39,6 +40,7 @@ function HeaderLinks() {
                 <option>Selecione</option>
                 <option>Problema 1</option>
                 <option>Problema 2</option>
+                <option>Problema 3</option>
               </select>
               <label>Mensagem:</label>
               <textarea rows="5" maxLength="500"></textarea>
@@ -93,7 +95,10 @@ function ModaisNexora() {
           <div className="warning-box">
             Nexora recomenda {papelSelecionado === 'empresa' ? 'usar email oficial da empresa' : 'login para maiores de 18 anos'}.
           </div>
-          <form>
+          <form onSubmit={(e) => {
+            e.preventDefault();
+            window.location.href = "UserPage.html";
+          }}>
             <label>Email:</label>
             <input type="email" placeholder="Digite seu email" />
             <a href="#">Esqueceu o email?</a>
@@ -111,6 +116,7 @@ function ModaisNexora() {
               Ao conectar-se com este site, você concorda com nossos <a>Termos de Uso</a> e <a>Política de Privacidade</a>.
             </p>
           </form>
+
         </div>
       )}
     </>

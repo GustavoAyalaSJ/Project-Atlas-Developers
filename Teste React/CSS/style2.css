@@ -1,0 +1,462 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+.background-container {
+    background-image: url('Fundo2.jpg');
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.cabeçalho {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2.5rem;
+    background-color: #111;
+    color: #fff;
+    position: relative;
+}
+
+.logotipo img {
+    height: 45px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 1.5rem;
+    margin-left: auto;
+}
+
+.nav-button {
+    background-color: #f0f0f0;
+    color: #111;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease;
+}
+
+.nav-button:hover {
+    background-color: #ddd;
+}
+
+.search-bar {
+    display: flex;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+
+.search-bar input[type="text"] {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 0.2rem 0.5rem;
+    width: 200px;
+}
+
+.search-bar input::placeholder {
+    color: #ccc;
+}
+
+.search-bar .search-icon {
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0 0.3rem;
+}
+
+#react-userActions {
+    position: relative;
+    margin-left: 1.5rem;
+}
+
+.header-user-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.icon-button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 55px;
+    right: 0;
+    width: 300px;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    padding: 1.5rem;
+    z-index: 1000;
+}
+
+#profile-dropdown {
+    width: 200px;
+}
+
+.dropdown-content .notification-text {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.dropdown-content .notification-warning {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 1rem;
+}
+
+.dropdown-content a {
+    display: block;
+    text-decoration: none;
+    color: #222;
+    padding: 0.75rem 0;
+    font-size: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown-content a:last-of-type {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #f9f9f9;
+}
+
+.dropdown-content a i {
+    margin-right: 10px;
+    width: 20px;
+}
+
+.close-dropdown {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.messageWelcome {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 2.5rem;
+}
+
+.main-layout {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.destacar {
+    color: rgb(60, 161, 255);
+}
+
+.first-box,
+.center-panel,
+.third-box {
+    flex-basis: 300px;
+    max-width: 400px;
+    flex-grow: 1;
+}
+
+.box-container {
+    padding: 1.5rem;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.box-container h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.box-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.box-content p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+}
+
+.box-button {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    align-self: flex-start;
+    transition: background-color 0.2s ease;
+}
+
+.box-button:hover {
+    background-color: #fff;
+}
+
+.box-container.blue-dark {
+    background-color: #1a3a5f;
+    min-height: 450px;
+}
+
+.box-container.gray-dark {
+    background-color: #4a4a4a;
+    min-height: 350px;
+}
+
+.box-container.blue-royal {
+    background-color: #0052cc;
+    min-height: 450px;
+}
+
+.favoritos-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.favorito-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.favorito-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    background-color: #fff;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.favorito-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.favorito-info strong {
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.favorito-info span {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.remove-favorito-btn {
+    background: transparent;
+    border: none;
+    color: #fff;
+    opacity: 0.7;
+    cursor: pointer;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    padding: 5px;
+}
+
+.remove-favorito-btn:hover {
+    opacity: 1;
+    color: #ffbaba;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #333;
+    color: #fff;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+/* Notebooks menores (até 1200px) */
+@media (max-width: 1200px) {
+    .main-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .messageWelcome {
+        font-size: 1.9rem;
+    }
+
+    .main-layout {
+        gap: 1.5rem;
+    }
+
+    .box-container {
+        min-height: 380px;
+    }
+}
+
+/* Tablets (até 900px) */
+@media (max-width: 900px) {
+    .cabeçalho {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+        padding: 1.2rem;
+    }
+
+    .logotipo img {
+        height: 40px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .nav-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .search-bar {
+        width: 100%;
+        border-color: #ccc;
+    }
+
+    .search-bar input[type="text"] {
+        width: 100%;
+        color: #111;
+    }
+
+    .main-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .first-box,
+    .center-panel,
+    .third-box {
+        width: 95%;
+        max-width: 500px;
+    }
+
+    .box-container {
+        min-height: 320px;
+        padding: 1.2rem;
+    }
+
+    .messageWelcome {
+        font-size: 1.7rem;
+        margin-bottom: 2rem;
+    }
+
+    .favorito-info strong {
+        font-size: 0.9rem;
+    }
+}
+
+/* Smartphones (até 600px) */
+@media (max-width: 600px) {
+    .messageWelcome {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .nav-button {
+        font-size: 0.8rem;
+        width: 53%;
+        padding: 10px 5px;
+        margin-left: 103px;
+    }
+
+    .search-bar {
+        width: 80%;
+        padding: 6px;
+        margin-left: 40px;
+        justify-content: space-between;
+    }
+
+    .header-user-actions {
+        gap: 0.6rem;
+        height: 20px;
+        margin-left: 175px;
+    }
+
+    .icon-button {
+        font-size: 1.3rem;
+    }
+
+    .box-container h3 {
+        font-size: 1.1rem;
+    }
+
+    .box-content p {
+        font-size: 0.9rem;
+    }
+
+    .box-button {
+        width: 100%;
+        text-align: center;
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    footer {
+        font-size: 0.9rem;
+        padding: 1.5rem;
+    }
+}

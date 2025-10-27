@@ -1,0 +1,597 @@
+/* --- GERAL E BODY --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f4f7f6; 
+    color: #333;
+}
+
+.background-container {
+    background-image: url('Fundo3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- CABEÇALHO (HEADER) --- */
+.cabeçalho {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2.5rem;
+    background-color: #111; 
+    color: #fff;
+    position: relative; 
+}
+
+.logo-link {
+    text-decoration: none;
+}
+
+.logotipo img {
+    height: 35px; 
+    display: block;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: auto;
+}
+
+.nav-button {
+    background-color: #f0f0f0; 
+    color: #111;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 20px; 
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease;
+}
+
+.nav-button:hover {
+    background-color: #ddd;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+
+.search-bar input[type="text"] {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 0.2rem 0.5rem;
+    width: 200px; 
+}
+
+.search-bar input::placeholder {
+    color: #ccc;
+}
+
+.search-bar .search-icon {
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0 0.3rem;
+}
+
+/* --- COMPONENTES REACT DO CABEÇALHO --- */
+#react-userActions {
+    position: relative;
+    margin-left: 1.5rem; 
+}
+
+.header-user-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.icon-button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.6rem; 
+    cursor: pointer;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 55px; 
+    right: 0;
+    width: 300px;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    padding: 1.5rem;
+    z-index: 1000;
+}
+
+#profile-dropdown {
+    width: 200px; 
+}
+
+.dropdown-content .notification-text {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+.dropdown-content .notification-warning {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 1rem;
+}
+
+.dropdown-content a {
+    display: block;
+    text-decoration: none;
+    color: #222;
+    padding: 0.75rem 0;
+    font-size: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+.dropdown-content a:last-of-type {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #f9f9f9;
+}
+
+.dropdown-content a i {
+    margin-right: 10px;
+    width: 20px; 
+}
+
+.close-dropdown {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* --- CONTEÚDO PRINCIPAL --- */
+.main-content {
+    flex-grow: 1; 
+}
+
+/* --- Formulário de Nova Vaga (Teste) --- */
+.form-nova-vaga {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 1.5rem;
+    margin: 2.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+.form-nova-vaga h3 {
+    width: 100%;
+    margin-bottom: 10px;
+    color: #333;
+}
+.form-nova-vaga input,
+.form-nova-vaga select {
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    flex-grow: 1;
+}
+.form-nova-vaga button {
+    padding: 0.7rem 1.5rem;
+    background-color: #0052cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.form-nova-vaga button:hover {
+    background-color: #0041a3;
+}
+
+/* --- Layout Principal da Página de Vagas --- */
+.vagas-pagina-container {
+    padding: 0 2.5rem 2.5rem 2.5rem; /* Sem padding no topo, pois o form já tem */
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* --- Filtros Dropdown --- */
+.filtros-container {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+.filtros-container select {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 1rem;
+    flex-grow: 1;
+}
+
+/* --- Layout de 2 Colunas (Lista + Detalhes) --- */
+.vagas-conteudo-principal {
+    display: flex;
+    gap: 2rem;
+}
+
+/* --- Coluna da Esquerda (Lista de Vagas) --- */
+.lista-vagas-container {
+    flex: 1; 
+    max-height: 75vh; 
+    overflow-y: auto;
+    padding-right: 10px; 
+}
+
+/* --- Card de Vaga Individual --- */
+.card-vaga {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    position: relative;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+    border-left: 5px solid transparent; 
+}
+.card-vaga:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.card-vaga.active {
+    border-left-color: #0052cc;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.card-vaga h3 {
+    font-size: 1.3rem;
+    color: #0052cc; 
+    margin-bottom: 0.25rem;
+}
+.card-vaga .empresa {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.25rem;
+}
+.card-vaga .local {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 1rem;
+}
+.card-vaga .info-rodape {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.card-vaga .favorite-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: transparent;
+    border: none;
+    font-size: 1.3rem;
+    color: #aaa;
+    cursor: pointer;
+}
+.card-vaga .favorite-btn .bi-heart-fill {
+    color: #e44d4d; 
+}
+
+/* Mensagem de "Nenhuma vaga" */
+.sem-vagas-aviso {
+    padding: 3rem 1rem;
+    text-align: center;
+    color: #777;
+    font-size: 1.1rem;
+    background-color: #fff;
+    border: 1px dashed #ddd;
+    border-radius: 8px;
+}
+
+/* --- Coluna da Direita (Detalhes da Vaga) --- */
+.detalhes-container {
+    flex: 1.5; 
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 2rem;
+    height: fit-content; 
+}
+
+.detalhes-container h2 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #777;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.detalhes-empresa {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+.detalhes-logo {
+    width: 70px;
+    height: 70px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 5px;
+    display: grid;
+    place-items: center;
+}
+.detalhes-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.detalhes-empresa h3 {
+    font-size: 1.7rem;
+    color: #333;
+}
+
+.detalhes-info strong {
+    display: block;
+    margin-top: 1.5rem;
+    color: #555;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+.detalhes-info p {
+    margin: 0.25rem 0;
+    font-size: 1rem;
+    color: #222;
+}
+
+.contato-button {
+    width: 100%;
+    padding: 0.85rem 1.5rem;
+    margin-top: 2rem;
+    background-color: #0052cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease;
+}
+.contato-button:hover {
+    background-color: #0041a3;
+}
+
+/* --- Estilos para Placeholder de Detalhes --- */
+.detalhes-container.placeholder {
+    color: #999;
+}
+.detalhes-container.placeholder h3,
+.detalhes-container.placeholder p {
+    color: #aaa;
+}
+.detalhes-logo.logo-placeholder {
+    display: grid;
+    place-items: center;
+    border: 2px dashed #ccc;
+    background-color: #f9f9f9;
+    color: #ccc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    width: 70px;
+    height: 70px;
+}
+
+/* --- RODAPÉ E MODALS --- */
+#react-footer-e-modals {
+    width: 100%;
+}
+
+.rodape {
+    text-align: center;
+    padding: 2rem;
+    background-color: #000000; 
+    color: #fff;
+}
+
+.rodape-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.link-button {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.link-button:hover {
+    color: #44a8ff;
+    transition: all 0.3s ease;
+}
+
+.separador {
+    color: #fff;
+}
+
+/* --- Estilos dos Modals --- */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: grid;
+    place-items: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.modal-content p {
+    line-height: 1.6;
+}
+
+.modal-content .destacar {
+    color: #0052cc;
+}
+
+.modal-content button[style*="float: right"] {
+    background: #eee;
+    border: 1px solid #ccc;
+    color: #555;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* Formulário de Feedback no Modal */
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.modal-content form label {
+    font-weight: bold;
+    color: #444;
+    margin-bottom: -5px;
+}
+.modal-content form input[type="text"],
+.modal-content form input[type="email"],
+.modal-content form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.modal-content form textarea {
+    resize: vertical;
+}
+.modal-content form button {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+}
+.modal-content form button[type="submit"] {
+    background-color: #0052cc;
+    color: white;
+}
+.modal-content form button[type="reset"] {
+    background-color: #eee;
+    color: #333;
+}
+
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 900px) {
+    .cabeçalho {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+        margin-left: 0;
+    }
+
+    #react-userActions {
+        margin-left: 0;
+    }
+
+    .search-bar {
+        width: 90%;
+        justify-content: space-between;
+    }
+    .search-bar input {
+        width: 100%;
+    }
+
+    .vagas-conteudo-principal {
+        flex-direction: column;
+    }
+    
+    .lista-vagas-container {
+        max-height: none; 
+        overflow-y: visible;
+        padding-right: 0;
+    }
+    
+    .detalhes-container {
+        margin-top: 2rem;
+    }
+
+    .filtros-container {
+        flex-direction: column;
+    }
+    
+    .form-nova-vaga,
+    .vagas-pagina-container {
+        padding: 1.5rem;
+        margin: 1.5rem;
+    }
+}
