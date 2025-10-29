@@ -27,3 +27,9 @@
 (21-10)
 - Testes com React na primeira página;
 - Mudança no nome de Atlas Developers para Nexora Line.
+
+(28-10)
+- Finalização do teste React pelo Nexora;
+- Ajustes no CSS do Nexora Line;
+- Novos Assets adicionados ao Project Nexora;
+- Categorização do Project Nexora como um projeto alternativo do Atlas.
