@@ -1,10 +1,10 @@
 // COMPONENTES
 function Box({ title, boxType, children }) {
     // Você precisará estilizar 'box-container' e as classes (blue-dark, etc.) no seu CSS
-    const className = `box-container ${boxType}`; 
+    const className = `box-container ${boxType}`;
     return (
         <div className={className}>
-            <h3>{title}</h3> 
+            <h3>{title}</h3>
             <div className="box-content">
                 {children}
             </div>
@@ -12,7 +12,7 @@ function Box({ title, boxType, children }) {
     );
 }
 
-function UserActions() { 
+function UserActions() {
     const [dropdownAberto, setDropdownAberto] = React.useState(null);
     const dropdownRef = React.useRef(null);
 
@@ -64,6 +64,7 @@ function UserActions() {
 
             {dropdownAberto === 'profile-button' && (
                 <div ref={dropdownRef} className="dropdown-content" id="profile-dropdown">
+                    <a href="PerfilPage.html" className="settings-link"><i className="bi bi-person-badge"></i>Perfil</a>
                     <a href="#" className="settings-link"><i className="bi bi-gear"></i> Configurações</a>
                     <a href="IntroducedPage.html"><i className="bi bi-box-arrow-left"></i> Sair</a>
                     <button onClick={handleFecharDropdown} className="close-dropdown">Fechar</button>
@@ -105,10 +106,10 @@ function StartDashboardbox() {
                     </Box>
                 </div>
 
-<div className="center-panel">
+                <div className="center-panel">
                     <div className="second-box">
                         <Box title="Vagas Favoritadas" boxType="gray-dark">
-                            
+
                             {favoritos.length === 0 ? (
                                 <p>Você não favoritou nenhuma vaga.</p>
                             ) : (
@@ -116,14 +117,14 @@ function StartDashboardbox() {
                                     {favoritos.map(vaga => (
                                         <li key={vaga.id} className="favorito-item">
                                             <img src={vaga.logo} alt={vaga.company} className="favorito-logo" />
-                                            
+
                                             <div className="favorito-info">
                                                 <strong>{vaga.title}</strong>
                                                 <span>{vaga.company}</span>
                                             </div>
-                                            
-                                            <button 
-                                                onClick={() => handleRemoveFavorito(vaga.id)} 
+
+                                            <button
+                                                onClick={() => handleRemoveFavorito(vaga.id)}
                                                 className="remove-favorito-btn"
                                                 aria-label="Remover favorito"
                                             >
@@ -133,7 +134,7 @@ function StartDashboardbox() {
                                     ))}
                                 </ul>
                             )}
-                            
+
                             <button className="box-button" onClick={handleFavoritePanel}>
                                 {favoritos.length === 0 ? 'Procurar Vagas' : 'Visualizar Vagas'}
                             </button>
