@@ -50,6 +50,7 @@ function UserActions() {
 
             {dropdownAberto === 'profile-button' && (
                 <div ref={dropdownRef} className="dropdown-content" id="profile-dropdown">
+                    <a href="PerfilPage.html" className="settings-link"><i className="bi bi-person-badge"></i>Perfil</a>
                     <a href="#" className="settings-link"><i className="bi bi-gear"></i> Configurações</a>
                     <a href="IntroducedPage.html"><i className="bi bi-box-arrow-left"></i> Sair</a>
                     <button onClick={handleFecharDropdown} className="close-dropdown">Fechar</button>
@@ -209,12 +210,14 @@ function PaginaDeVagas() {
         state: '',
         period: '',
         serviceType: 'Remoto',
-        level: 'junior'
+        level: 'junior',
+        logo: null
     };
     const [formNovaVaga, setFormNovaVaga] = React.useState(estadoInicialForm);
 
     const [modalContatoAberto, setModalContatoAberto] = React.useState(false);
 
+    const [logoPreview, setLogoPreview] = React.useState(null);
 
     const municipiosParaFiltro = React.useMemo(() => {
         if (filtros.estado === 'todos') return [];
@@ -267,17 +270,36 @@ function PaginaDeVagas() {
     }
 
     function handleFormChange(e) {
-        const { name, value } = e.target;
-        setFormNovaVaga(formAnterior => {
-            const novoForm = {
-                ...formAnterior,
-                [name]: value
-            };
-            if (name === 'state') {
-                novoForm.city = '';
+        if (e.target.type === 'file' && e.target.name === 'logo') {
+            const file = e.target.files[0];
+            if (!file) {
+                return;
             }
-            return novoForm;
-        });
+
+            if (logoPreview) {
+                URL.revokeObjectURL(logoPreview);
+            }
+
+            setLogoPreview(URL.createObjectURL(file));
+
+            setFormNovaVaga(formAnterior => ({
+                ...formAnterior,
+                logo: file
+            }));
+
+        } else {
+            const { name, value } = e.target;
+            setFormNovaVaga(formAnterior => {
+                const novoForm = {
+                    ...formAnterior,
+                    [name]: value
+                };
+                if (name === 'state') {
+                    novoForm.city = '';
+                }
+                return novoForm;
+            });
+        }
     }
 
     function handleSubmitNovaVaga(e) {
@@ -291,16 +313,20 @@ function PaginaDeVagas() {
         const novaVaga = {
             ...formNovaVaga,
             id: Date.now(),
-            logo: 'AssetsLogoEmpresas/Logo-Default.png'
+            logo: logoPreview || 'AssetsLogoEmpresas/Logo-Default.png'
         };
 
         setVagas(vagasAnteriores => [novaVaga, ...vagasAnteriores]);
-
         setFormNovaVaga(estadoInicialForm);
+
+        if (logoPreview) {
+            URL.revokeObjectURL(logoPreview);
+        }
+        setLogoPreview(null);
+
         alert('Vaga adicionada com sucesso!');
     }
 
-    // --- NOVAS FUNÇÕES PARA O MODAL ---
     const handleAbrirContato = () => setModalContatoAberto(true);
     const handleFecharContato = () => setModalContatoAberto(false);
 
@@ -311,6 +337,22 @@ function PaginaDeVagas() {
                 <h3>Adicionar Vaga (Teste)</h3>
                 <input name="title" value={formNovaVaga.title} onChange={handleFormChange} placeholder="Título da Vaga" required />
                 <input name="company" value={formNovaVaga.company} onChange={handleFormChange} placeholder="Empresa" required />
+                <div className="logo-upload-section">
+                    <label htmlFor="logo-upload-input" className="logo-upload-label">
+                        {logoPreview ? "Trocar Logo" : "Adicionar Logo"}
+                    </label>
+                    <input
+                        id="logo-upload-input"
+                        type="file"
+                        name="logo"
+                        accept="image/png, image/jpeg, image/webp"
+                        onChange={handleFormChange}
+                        style={{ display: 'none' }}
+                    />
+                    {logoPreview && (
+                        <img src={logoPreview} alt="Prévia do logo" className="logo-preview" />
+                    )}
+                </div>
                 <input name="period" value={formNovaVaga.period} onChange={handleFormChange} placeholder="Período (ex: 8h/dia)" />
 
                 <select name="state" value={formNovaVaga.state} onChange={handleFormChange} required>
@@ -385,7 +427,7 @@ function PaginaDeVagas() {
                     </section>
 
                     <DetalhesVaga
-                        vaga={vagaAtiva}
+                        E-mail vaga={vagaAtiva}
                         onAbrirModalContato={handleAbrirContato}
                     />
 
