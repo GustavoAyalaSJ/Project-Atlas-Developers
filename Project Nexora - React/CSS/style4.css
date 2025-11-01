@@ -150,7 +150,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    ;
     align-items: center;
     flex-grow: 1;
     width: 100%;
@@ -266,7 +265,32 @@ body {
         0 0 21px #463a69ba,
         0 0 42px #d4c5ffba,
         0 0 82px #dbcfffba;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
+}
+
+.btn-portifólio {
+    background-color: #c7c7c78d;
+    color: black;
+    border: solid #5a5a5a8d;
+    border-radius: 25px;
+    padding: 12px 24px;
+    font-weight: 450;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-portifólio:hover {
+    background-color: #418fce;
+    color: white;
+    border: 2px solid #2a596e;
+    box-shadow:
+        0 0 7px #2a596e,
+        0 0 10px #35718d,
+        0 0 21px #418caf,
+        0 0 42px #499ec5,
+        0 0 82px #59bfee;
+    transform: translateY(-1px);
 }
 
 .perfil-body {

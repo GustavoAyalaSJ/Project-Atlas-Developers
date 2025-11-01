@@ -70,6 +70,7 @@ function UserActions() {
                     <button onClick={handleFecharDropdown} className="close-dropdown">Fechar</button>
                 </div>
             )}
+
         </React.Fragment>
     );
 }
@@ -85,6 +86,10 @@ function StartDashboardbox() {
     const [favoritos, setFavoritos] = React.useState([]);
 
     const getFavoritos = () => JSON.parse(localStorage.getItem('nexoraFavoritos') || '[]');
+
+    const [modalAberto, setModalAberto] = React.useState(null);
+    const handleFecharModal = () => { setModalAberto(null); };
+    const handleAbrirGit = () => { setModalAberto('GitHub'); };
 
     React.useEffect(() => {
         setFavoritos(getFavoritos());
@@ -102,10 +107,9 @@ function StartDashboardbox() {
                 <div className="first-box" onClick={handleProjectPanel}>
                     <Box title="Projetos Linkados" boxType="blue-dark">
                         <p>Você não postou nenhum projeto.</p>
-                        <button className="box-button">Postar Projetos</button>
+                        <button onClick={handleAbrirGit} className="box-button">Postar Projetos</button>
                     </Box>
                 </div>
-
                 <div className="center-panel">
                     <div className="second-box">
                         <Box title="Vagas Favoritadas" boxType="gray-dark">
@@ -149,6 +153,25 @@ function StartDashboardbox() {
                     </Box>
                 </div>
             </div>
+
+            {modalAberto === 'GitHub' && (
+                <div className="modal-overlay">
+                    <div className="modal-content">
+                        <button onClick={handleFecharModal}>X</button>
+                        <h2>Poste seus projetos com GitHub</h2>
+                        <a
+                            href="https://github.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="github-button"
+                            aria-label="GitHub"
+                        >
+                            <i className="bi bi-github"></i> Acessar o GitHub
+                        </a>
+                    </div>
+                </div>
+            )}
+
         </React.Fragment>
     );
 }
