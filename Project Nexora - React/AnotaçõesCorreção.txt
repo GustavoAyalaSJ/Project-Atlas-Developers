@@ -1,0 +1,21 @@
+Bloco de notas para análise de coisas incompletas no Nexora
+
+1. IntroducedPage.html
+- Remoção do modal de escolhas (candidato e empresa) após a seleção;
+- Não tem modais para esqueceu o email e senha;
+- O botão cadastro não funciona.
+
+2. UserPage.html
+- As fotos das empresas não aparecem nas vagas favoritadas;
+- Botão de visualizar painel de notícias não funciona;
+- Não tem modal de configurações.
+
+3. VagasPage.html
+- Não tem modal de configurações;
+- Logo e nome de empresa em posições trocadas;
+- Modal de Contato deve ser atualizado.
+
+4. PerfilPage.html
+- Ajuste no quadro de contato;
+- Não tem modal de configurações;
+- Ao selecionar a foto, ela deve atualizar o icone do container de foto.

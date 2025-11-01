@@ -56,8 +56,15 @@ function HeaderLinks() {
 
 function ModaisNexora() {
   const [modalAberto, setModalAberto] = React.useState(null);
+  const [mostrarTermos, setMostrarTermos] = React.useState(false);
+  const [mostrarPolitica, setMostrarPolitica] = React.useState(false);
   const [mostrarSenha, setMostrarSenha] = React.useState(false);
   const [papelSelecionado, setPapelSelecionado] = React.useState(null);
+  const handleAbrirTermos = () => setMostrarTermos(true);
+  const handleAbrirPolítica = () => setMostrarPolitica(true);
+  const handleFecharTermos = () => setMostrarTermos(false);
+  const handleFecharPolitica = () => setMostrarPolitica(false);
+
 
   const handleAbrirForm = () => {
     setModalAberto('formulário');
@@ -105,23 +112,50 @@ function ModaisNexora() {
             <label>Senha:</label>
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <input type={mostrarSenha ? "text" : "password"} placeholder="Digite sua senha" />
-              <span onClick={() => setMostrarSenha(!mostrarSenha)} style={{ marginLeft: '10px', cursor: 'pointer' }}>
-                <i className="bi bi-eye-fill"></i>
+              <span onClick={() => setMostrarSenha(!mostrarSenha)}
+                style={{ marginLeft: '10px', cursor: 'pointer' }}>
+                {mostrarSenha ? (
+                  <i className="bi bi-eye-slash-fill"></i>
+                ) : (
+                  <i className="bi bi-eye-fill"></i>
+                )}
               </span>
             </div>
             <a href="#">Esqueceu a senha?</a>
             <button type="submit">LOGAR</button>
             <button type="button">CADASTRE-SE</button>
             <p>
-              Ao conectar-se com este site, você concorda com nossos <a>Termos de Uso</a> e <a>Política de Privacidade</a>.
+              Ao conectar-se com este site, você concorda com nossos
+              <a onClick={handleAbrirTermos} style={{ cursor: 'pointer' }}> Termos de Uso </a> e
+              <a onClick={handleAbrirPolítica} style={{ cursor: 'pointer' }}> Política de Privacidade </a>.
             </p>
-          </form>
 
+          </form>
+        </div>
+      )}
+      {mostrarTermos && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <button onClick={handleFecharTermos}>X</button>
+            <h2>Termos de Uso</h2>
+            <p>PLACEHOLDER</p>
+          </div>
+        </div>
+      )}
+
+      {mostrarPolitica && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <button onClick={handleFecharPolitica}>X</button>
+            <h2>Política de Privacidade</h2>
+            <p>PLACEHOLDER</p>
+          </div>
         </div>
       )}
     </>
   );
 }
+
 
 // Renderização
 ReactDOM.createRoot(document.getElementById('react-header-links')).render(<HeaderLinks />);

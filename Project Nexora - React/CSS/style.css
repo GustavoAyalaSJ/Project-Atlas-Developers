@@ -20,20 +20,19 @@ html, body {
   width: 100%;
 }
 
-/* 1.1 Cabeçalho (logo, links) */
+/* 1.1 Cabeçalho */
 .cabeçalho {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 20px 35px;
   background-color: #000000;
-  background-image: url('CabeçalhoALT.png');
   color: white;
   flex-shrink: 0;
 }
 
 .logotipo img {
-  height: 45px; 
+  height: 40px; 
   width: auto;
 }
 
@@ -72,8 +71,12 @@ html, body {
   position: relative;
 }
 
+.nexora{
+  color: #e9e9e9;
+}
+
 .line{
-  color:#bdaceeba;
+  color:#e4dcfff3;
     text-shadow:
     0 0 7px #463a69ba,
     0 0 10px #463a69ba,
@@ -110,7 +113,6 @@ html, body {
   padding: 25px;
   text-align: center;
   background-color: #000000;
-  background-image: url('Rodapé.png');
   color: rgba(164, 139, 255, 0.849);
   flex-shrink: 0;
   font-size: 0.9rem;
@@ -135,7 +137,6 @@ html, body {
   max-width: 600px;
 }
 
-/* Botão "BOTÃO" (Injetado pelo React) */
 .btn-landing {
   display: inline-block;
   margin-top: 30px;
@@ -160,7 +161,7 @@ html, body {
     inset 0 0 32px #736797c2;
 }
 
-/* --- 3. MODAL DE SELEÇÃO (ESQUERDA - Imagem 2, 3, 4) --- */
+/* --- 3. MODAL DE SELEÇÃO --- */
 #react-form-label {
   position: absolute;
   top: 0;
@@ -433,6 +434,7 @@ html, body {
 label{
   color: black;
 }
+
 .modal-content {
   background-color: #FFFFFF;
   padding: 30px 35px;
@@ -443,6 +445,19 @@ label{
   max-height: 90vh;
   overflow-y: auto;
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
 .modal-content h2 {
@@ -525,212 +540,3 @@ label{
   background-color: #D9D9D9;
   color: black;
 }
-
-/* --- MEDIA QUERIES --- */
-
-/* 6.1 - Tablets e telas médias (até 1024px) */
-@media (max-width: 1024px) {
-  .cabeçalho {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 15px 20px;
-  }
-
-  .header-links {
-    margin-top: 10px;
-  }
-
-  .main-content {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .container-left,
-  #react-containerImage-right {
-    width: 100%;
-    padding: 40px 25px;
-  }
-
-  .container-left {
-    text-align: center;
-  }
-
-  .left h1 {
-    font-size: 2.5rem;
-  }
-
-  .left h2 {
-    font-size: 1.8rem;
-  }
-
-  .left p {
-    font-size: 1rem;
-    margin: 0 auto;
-  }
-
-  .btn-landing {
-    margin-top: 25px;
-    padding: 12px 35px;
-    font-size: 1rem;
-  }
-
-  .login-card {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 90%;
-    width: 90%;
-    z-index: 1000;
-  }
-}
-
-/* 6.2 - Smartphones grandes e médios (até 768px) */
-@media (max-width: 768px) {
-  .cabeçalho {
-    padding: 15px;
-  }
-
-  .header-links a {
-    font-size: 0.95rem;
-    margin: 0 8px;
-  }
-
-  .main-content {
-    flex-direction: column;
-  }
-
-  .container-left,
-  #react-containerImage-right {
-    padding: 30px 15px;
-  }
-
-  .left h1 {
-    font-size: 2.2rem;
-  }
-
-  .left h2 {
-    font-size: 1.5rem;
-  }
-
-  .left p {
-    font-size: 0.95rem;
-  }
-
-  .btn-landing {
-    padding: 10px 25px;
-    font-size: 0.95rem;
-  }
-
-  .modal-card {
-    max-width: 90%;
-    padding: 30px 25px;
-  }
-
-  .modal-card h2 {
-    font-size: 1.3rem;
-  }
-
-  .modal-card a {
-    font-size: 1.1rem;
-    padding: 18px;
-  }
-
-  .login-card {
-    width: 95%;
-    padding: 25px;
-    font-size: 0.95rem;
-  }
-
-  .login-card form label,
-  .login-card form input,
-  .login-card form button {
-    font-size: 0.9rem;
-  }
-
-  .login-card form a {
-    font-size: 0.85rem;
-  }
-
-  .modal-content {
-    max-width: 90%;
-    padding: 25px;
-  }
-
-  .modal-content h2 {
-    font-size: 1.3rem;
-  }
-}
-
-/* 6.3 - Smartphones pequenos (até 480px) */
-@media (max-width: 480px) {
-  .cabeçalho {
-    padding: 10px;
-  }
-
-  .header-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .header-links a {
-    margin: 5px 0;
-    font-size: 0.9rem;
-  }
-
-  .left h1 {
-    font-size: 1.8rem;
-  }
-
-  .left h2 {
-    font-size: 1.2rem;
-  }
-
-  .left p {
-    font-size: 0.9rem;
-  }
-
-  .btn-landing {
-    padding: 8px 20px;
-    font-size: 0.9rem;
-  }
-
-  .modal-card {
-    max-width: 95%;
-    padding: 25px;
-  }
-
-  .modal-card h2 {
-    font-size: 1.1rem;
-  }
-
-  .modal-card a {
-    font-size: 1rem;
-    padding: 14px;
-  }
-
-  .login-card {
-    padding: 20px;
-    width: 90%;
-  }
-
-  .login-card form input {
-    padding: 10px;
-  }
-
-  .login-card form p {
-    font-size: 0.75rem;
-  }
-
-  .modal-content {
-    max-width: 95%;
-    padding: 20px;
-  }
-
-  .modal-content form button {
-    font-size: 0.9rem;
-  }
-}
-
